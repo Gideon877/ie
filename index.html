@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>DaY</title>
+        <link rel="stylesheet" href="event_reminder.css">
+        <link href="https://fonts.googleapis.com/css?family=Arapey|EB+Garamond" rel="stylesheet">
+        <script src="handlebars-v4.0.5.js"></script>
+    </head>
+    <body>
+        <div class="myBox">
+            <header>
+                <h2 align="center">Upcoming Event</h2>
+            </header>
+            <div id="myInput" align="center">
+                <input type="text" value="" placeholder="Search Event" id="myName">
+                <button type="button" name="button" onclick="myFunction();">Search</button> <br>
+                <button type="button" onclick="hideShowSearch();" align="center" style="padding: 1%;margin: 1%;">Add Reminder</button>
+            </div>
+            <hr>
+            <div id="add" align="center" style="display: none;">
+                <label for="name">Name</label>
+                <input type="text" id="newName" value="" placeholder="Thabang"><br>
+
+                <label for="event">Event</label>
+                <input type="text" id="neweventType" value="" placeholder="Birthday/Meeting"><br>
+
+                <label for="dob">Date</label>
+                <input type="date" id="newDob" value="" ><br>
+                <button type="button" onclick="addName();">Add</button>
+
+            </div>
+
+            <script id="k" type="text/x-handlebars-template">
+                List of People Available:
+                {{#each names}}
+                <ol>{{name}} {{dob}}</ol>
+                {{/each}}
+            </script>
+
+            <script id="display" type="text/x-handlebars-template">
+                <div id="displayOutput" align="center">
+                    <!-- {name:'Thabang', surname:'Gideon', dob:'1990-09-20'} -->
+                    {{#each n}}
+                    {{name}}'s {{eventType}} is  in: </div>
+                    {{/each}}
+            </script>
+
+            <div id="displayResult" align="center"></div>
+            <div id="showTm" align="center"></div>
+            <div id="yrs" align="center"></div>
+
+        </div>
+
+        <script type="text/javascript" src="event_reminder.js"></script>
+    </body>
+</html>
