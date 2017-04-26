@@ -16,6 +16,7 @@
                 <input type="text" value="" placeholder="Search Event" id="myName">
                 <button type="button" name="button" onclick="myFunction();">Search</button> <br>
                 <button type="button" onclick="hideShowSearch();" align="center" style="padding: 1%;margin: 1%;">Add Reminder</button>
+                <button type="button" onclick="hideNames();" align="center" style="padding: 1%;margin: 5%;">Available Events</button>
             </div>
             <hr>
             <div id="add" align="center" style="display: none;">
@@ -30,13 +31,26 @@
                 <button type="button" onclick="addName();">Add</button>
 
             </div>
+            <!-- <div id="a" align="center" style="display: none;"> -->
 
             <script id="k" type="text/x-handlebars-template">
-                List of People Available:
-                {{#each names}}
-                <ol>{{name}} {{dob}}</ol>
-                {{/each}}
+                <table align="center">
+                    <tbody>
+                        <tr>
+                            <th>Name</th>
+                            <th>Event date</th>
+                        </tr>
+                        {{#each names}}
+                        <tr>
+                            <td>{{name}}</td>
+                            <td>{{dob}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+
+                </table>
             </script>
+        </div>
 
             <script id="display" type="text/x-handlebars-template">
                 <div id="displayOutput" align="center">
@@ -48,7 +62,7 @@
 
             <div id="displayResult" align="center"></div>
             <div id="showTm" align="center"></div>
-            <div id="yrs" align="center"></div>
+            <div id="yrs" align="start" style="display: none;"></div>
 
         </div>
 
