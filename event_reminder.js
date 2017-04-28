@@ -48,9 +48,9 @@ function check(myDate) {
 }, 1000)};
 
 var names = [
-    {name:'codex', eventType:'demo', dob:'2017-04-25'},
-    {name:'viwe', eventType:"birthday", dob:'2010-12-20'},
-    {name:'loyiso', eventType:'birthday', dob:'2017-11-14'}
+    {name:'codex', eventType:'demo', dob:'2017-05-09'},
+    {name:'viwe', eventType:"birthday", dob:'1994-12-05'},
+    {name:'loyiso', eventType:'birthday', dob:'1985-11-14'}
 ];
 var k = document.getElementById('k');
 var template = Handlebars.compile(k.innerHTML);
@@ -62,7 +62,7 @@ function addName(){
     var neweventType = document.getElementById("neweventType").value;
     var newDob = document.getElementById('newDob').value; // var str = "2017-09-20";
     var name1 = {};
-    function checkNames(input) {return input.name == newName;}
+    function checkNames(input) {return input.name == newName.toLowerCase();}
     var checkedNames = names.filter(checkNames);
     if(checkedNames.length < 1){
 
